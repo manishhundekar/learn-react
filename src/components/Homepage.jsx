@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Car from "./Car";
+import Student from "./Student";
+import StudentForm from "./StudentForm";
 
 const Homepage = () => {
   const cars = [
@@ -23,9 +25,11 @@ const Homepage = () => {
 
   return (
     <div>
-      {cars.map((car) => {
+      {/* {cars.map((car) => {
         return <Car details={car} />;
-      })}
+      })} */}
+      {/* <Student studentName={"Ramesh Kumar"}/> */}
+      <StudentForm />
     </div>
   );
 };
