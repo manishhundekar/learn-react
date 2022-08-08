@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Car = (props) => {
   const carStyle = {
@@ -32,7 +33,11 @@ const Car = (props) => {
         }}
       >
         Brake
-      </button>
+      </button> <br />
+      <a href="/studentform">CLICK HERE TO GO TO STUDENT FORM USING ANCHOR TAG</a> <br />
+      <Link to="/studentform"> 
+         CLICK HERE TO GO TO STUDENT FORM USING LINK COMPONENT
+      </Link>
     </div>
   );
 };

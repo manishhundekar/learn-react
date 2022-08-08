@@ -1,40 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import { getAPIStudentsData } from "../util/api";
 
-class Student extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      counterValue: 0,
-    };
-
-    this.handleDecrement = this.handleDecrement.bind(this)
-  }
-
-  handleIncrement = () => {
-    console.log("Update State Variable");
-    this.setState({
-      counterValue: this.state.counterValue + 1,
-    });
+const Student = () => {
+  const studentStyle = {
+    border: "2px solid black",
+    margin: "10%",
+    padding: "20px",
   };
 
-  handleDecrement() {
-    console.log("Update State Variable");
-    this.setState({
-      counterValue: this.state.counterValue - 1,
-    });
+//   1. Hardcoded Data
+  const student =  {
+    age: "21",
+    firstName: "Gopal",
+    gender: "Male",
+    lastName: "Kumar",
   }
 
-  render() {
-    return (
-      <>
-        <h2>{this.props.studentName}</h2>
-        <h2>{this.state.counterValue}</h2>
-        <button onClick={this.handleIncrement}>+</button>
-        <button onClick={this.handleDecrement}>-</button>
-      </>
-    );
-  }
-}
+//   const [student, setStudent] = useState({
+//     age: "",
+//     firstName: "",
+//     gender: "",
+//     lastName: "",
+//   });
+
+//   getAPIStudentsData()
+//     .then((respose) => {
+//       console.log(respose);
+//       setStudent(respose[0])
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+
+  return (
+    <div style={studentStyle}>
+      <h3>{student.firstName}</h3>
+      <h3>{student.lastName}</h3>
+      <h3>{student.gender}</h3>
+      <h3>{student.age}</h3>
+    </div>
+  );
+};
 
 export default Student;

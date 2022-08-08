@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Car from "./Car";
-import Student from "./Student";
 import StudentForm from "./StudentForm";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Student from "./Student";
 
 const Homepage = () => {
   const cars = [
@@ -23,13 +24,16 @@ const Homepage = () => {
     },
   ];
 
+
   return (
     <div>
-      {/* {cars.map((car) => {
-        return <Car details={car} />;
-      })} */}
-      {/* <Student studentName={"Ramesh Kumar"}/> */}
-      <StudentForm />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Student />} />
+          <Route exact path="/car" element={<Car details={cars[0]} />} />
+          <Route exact path="/studentform" element={<StudentForm />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
